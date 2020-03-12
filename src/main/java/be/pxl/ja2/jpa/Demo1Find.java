@@ -12,7 +12,7 @@ public class Demo1Find {
 		EntityManagerFactory entityManagerFactory = null;
 		EntityManager entityManager = null;
 		try {
-			entityManagerFactory = Persistence.createEntityManagerFactory("musicdb_pu");
+			entityManagerFactory = Persistence.createEntityManagerFactory("musicdb_pu"); //Hibernate kijkt in de persistence.xml
 			entityManager = entityManagerFactory.createEntityManager();
 			Contact contact = entityManager.find(Contact.class, 1);
 			System.out.println(contact);

@@ -6,17 +6,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
+@Entity //annotatie voor Hibernate
 @Table(name = "contacts")
 public class Contact {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id //Primary Key
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Welke strategie moet Hibernate gebruiken om ID's te genereren. Hier IDENTITY = auto-increment
 	private int id;
 	private String name;
 	private int phone;
 	private String email;
 
-	public Contact() {
+	public Contact() { // in entity klasse ALTIJD een default constructor voorzien, Hibernate gebruikt deze om objecten aan te maken.
 	}
 
 	public Contact(String name, int phone, String email) {
